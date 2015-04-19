@@ -24,3 +24,4 @@ C:\Lab\CommandPatternAlejandro\CommandPatternAlejandro\bin\Debug\FluentNHibernat
 C:\Lab\CommandPatternAlejandro\CommandPatternAlejandro\bin\Debug\Iesi.Collections.xml
 C:\Lab\CommandPatternAlejandro\CommandPatternAlejandro\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Lab\CommandPatternAlejandro\CommandPatternAlejandro\bin\Debug\NHibernate.xml
+C:\Lab\CommandPatternAlejandro\CommandPatternAlejandro\bin\Debug\VisualStudioGitIgnore.dll
