@@ -2,7 +2,7 @@
 
 namespace CommandPatternAlejandro
 {
-    public interface IRepository<T> where T : IEntity
+    public interface IRepository<T> where T : AggregateRoot
     { 
         IQueryable<T> GetAll();
         T GetById(int id);

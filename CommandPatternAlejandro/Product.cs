@@ -6,9 +6,8 @@ using System.Text;
 
 namespace CommandPatternAlejandro
 {
-    public class Product: IEntity
+    public class Product: AggregateRoot
     {
-        public virtual int Id { get; protected set; }
         public virtual ProductName Name { get; protected set; }
 
         public virtual Decimal Price{ get; protected set; }

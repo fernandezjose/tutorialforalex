@@ -12,17 +12,13 @@ namespace CommandPatternAlejandro
         private static void Main(string[] args)
         {
             var container = RegisterNinject.RegisterClasses();
-
-
-
-
-
+            
             var command = new CreateProductCommand() {Name = "El Producto"};
             var gate = container.Get<IGate>();
 
             gate.Dispatch(command);
 
-            var updateCommand = new UpdateProductCommand() {Name = "El Nuevo Producto", ProductId = 1};
+            var updateCommand = new UpdateProductCommand() { Name = "El Nuevo Producto", ProductId = 1 };
             gate.Dispatch(updateCommand);
 
             Console.ReadLine();

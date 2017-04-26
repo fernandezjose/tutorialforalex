@@ -4,7 +4,7 @@ using NHibernate.Linq;
 
 namespace CommandPatternAlejandro
 {
-    public class Repository<T> : IRepository<T> where T : IEntity
+    public class Repository<T> : IRepository<T> where T : AggregateRoot
     {
         private readonly UnitOfWork _unitOfWork;
         public Repository(IUnitOfWork unitOfWork)

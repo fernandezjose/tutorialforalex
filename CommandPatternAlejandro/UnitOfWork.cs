@@ -2,6 +2,7 @@
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Event;
 using NHibernate.Tool.hbm2ddl;
 
 namespace CommandPatternAlejandro
@@ -21,6 +22,17 @@ namespace CommandPatternAlejandro
                 .Database(MySQLConfiguration.Standard.ConnectionString(x => x.FromConnectionStringWithKey("Default")))
                 .Mappings(m=>m.FluentMappings.AddFromAssemblyOf<Program>())
                 .ExposeConfiguration(config => new SchemaUpdate(config).Execute(false, true))
+                .ExposeConfiguration(x =>
+                {
+                    x.EventListeners.PostCommitUpdateEventListeners =
+                        new IPostUpdateEventListener[] { new EventListener() };
+                    x.EventListeners.PostCommitInsertEventListeners =
+                        new IPostInsertEventListener[] { new EventListener() };
+                    x.EventListeners.PostCommitDeleteEventListeners =
+                        new IPostDeleteEventListener[] { new EventListener() };
+                    x.EventListeners.PostCollectionUpdateEventListeners =
+                        new IPostCollectionUpdateEventListener[] { new EventListener() };
+                })
                 .BuildSessionFactory();
         }
 

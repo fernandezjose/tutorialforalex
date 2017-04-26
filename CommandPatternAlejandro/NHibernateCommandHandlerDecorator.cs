@@ -17,10 +17,11 @@ namespace CommandPatternAlejandro
         public void Handle(TCommand command)
         {
             UnitOfWork.BeginTransaction();
-            Console.WriteLine("Starting dbContext");
+            
             _inner.Handle(command);
+            
             UnitOfWork.Commit();
-            Console.WriteLine("Ending dbContext");
+            
         }
     }
 }

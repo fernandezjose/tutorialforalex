@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,6 +80,7 @@
     <Compile Include="CommandDispatcher.cs" />
     <Compile Include="CommandHandlerFactoryInstaceProvider.cs" />
     <Compile Include="ContainerCommandHandlerDecorator.cs" />
+    <Compile Include="EventListener.cs" />
     <Compile Include="IProductRepository.cs" />
     <Compile Include="NHibernateCommandHandlerDecorator.cs" />
     <Compile Include="CreateProductCommand.cs" />
